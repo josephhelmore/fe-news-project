@@ -18,15 +18,15 @@ const TopicList = () => {
       Topic List:
       <ul>
         {topics.map((topic) => (
-          <>
-            <Link to={"https://book-app-kc9i.onrender.com/api/articles"}>
-              <li key={topic.slug}> {topic.slug}</li>
-            </Link>
-          </>
+          <Link to={`/topics/${topic.slug}`}>
+            <li key={topic.slug}> {topic.slug}</li>
+          </Link>
         ))}
       </ul>
     </div>
   );
 };
+
+//when each topic is clicked, display all the articles where the article.topic = topic
 
 export default TopicList;
