@@ -1,39 +1,47 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useNavigate,  } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+
 
 const Articles = () => {
-  let navigate = useNavigate();
   const { slug } = useParams();
+  const navigate = useNavigate()
 
   const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://book-app-kc9i.onrender.com/api/articles")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.articles, "data.articles");
         setArticles(data.articles);
+        setIsLoading(false);
       });
   }, []);
+
+  if (isLoading) {
+    return <p>Fetching the data... </p>;
+  }
 
   const validArticles = articles.filter((article) => article.topic === slug);
   console.log(validArticles);
   return (
-    <div id="article-list">
+    <div>
       Articles in topic {`${slug}`}
-      <ul>
+      <ul id="article-list">
         {validArticles.map((article) => (
-          < React.Fragment key={article.article_id} >
-            <li key={article.article_id}>{article.title}</li>
+          <div className="single-article">
+            <p key={article.article_id}>{article.title}</p>
             <img
               src={article.article_img_url}
-              width={200}
+              width={50}
               alt="A picture of the article"
             />
-          </React.Fragment>
+            <button onClick={() => navigate(`/articles/${article.article_id}`)}>
+              More Info
+            </button>
+          </div>
         ))}
       </ul>
-      <button onClick={() => navigate(-1)}>Back</button>
     </div>
   );
 

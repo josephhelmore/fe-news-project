@@ -1,0 +1,67 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+header {
+ 
+  background-color: rgb(195, 195, 195);
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+#topic-card {
+  margin-left: 10%;
+  width: 20%;
+  height: auto;
+  font-family: "Courier New", Courier, monospace;
+  background-color: rgb(55, 142, 217);
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 5px;
+}
+
+.topic-list {
+  text-align: center;
+  padding-left: 0;
+}
+
+.topic-card {
+  text-align: center;
+}
+
+#article-list{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: purple;
+    height: auto;
+    border-radius: 5px;
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10px;
+    
+    
+}
+
+#main-body{
+display: flex;
+}
+
+.single-article {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    background-color: antiquewhite;
+    flex-direction: column;
+    margin: 10px;
+    align-items: center;
+    
+}
