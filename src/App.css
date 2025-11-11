@@ -1,11 +1,4 @@
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto;
-}
-
 header {
- 
   background-color: rgb(195, 195, 195);
   width: 80%;
   margin-left: 10%;
@@ -18,11 +11,13 @@ header {
 }
 
 #topic-card {
+    padding-top:20px;
+    padding-bottom: 20px;
   margin-left: 10%;
   width: 20%;
-  height: auto;
-  font-family: "Courier New", Courier, monospace;
-  background-color: rgb(55, 142, 217);
+  height: 75vh;
+  font-family: "Courier New", Courier;
+  background-color: rgb(146, 192, 232);
   box-shadow: 5px 5px 5px grey;
   border-radius: 5px;
 }
@@ -36,32 +31,62 @@ header {
   text-align: center;
 }
 
-#article-list{
-
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    background-color: purple;
-    height: auto;
-    border-radius: 5px;
-    width: 80%;
-    margin-right: 10%;
-    margin-left: 10px;
-    
-    
+#article-list {
+  margin-top: 0;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: rgb(230, 163, 230);
+  height: 75vh;
+  border-radius: 5px;
+  width: 60vw;
+  margin-right: 10%;
+  margin-left: 10px;
+  box-shadow: 5px 5px 5px grey;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding: 20px;
 }
 
-#main-body{
-display: flex;
+#main-body {
+  display: flex;
 }
 
 .single-article {
-    display: flex;
-    width: 150px;
-    height: 150px;
-    background-color: antiquewhite;
-    flex-direction: column;
-    margin: 10px;
-    align-items: center;
-    
+  display: flex;
+  width: 150px;
+  height: 150px;
+  background-color: antiquewhite;
+  flex-direction: column;
+  margin: 10px;
+  align-items: center;
+}
+
+.single-article:hover {
+  background-color: beige;
+}
+
+#single-article-data {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  background-color: rgb(230, 163, 230);
+
+  height: 75vh;
+  width: 60vw;
+  margin-top: 0;
+  margin-right: 10%;
+  margin-left: 10px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px grey;
+
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding: 20px;
+}
+
+#comments {
+  text-align: center;
 }

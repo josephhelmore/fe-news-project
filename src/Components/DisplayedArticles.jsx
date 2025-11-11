@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-
 const Articles = () => {
   const { slug } = useParams();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -19,27 +18,26 @@ const Articles = () => {
   }, []);
 
   if (isLoading) {
-    return <p>Fetching the data... </p>;
+    return <p id="article-list">Fetching the data... </p>;
   }
 
   const validArticles = articles.filter((article) => article.topic === slug);
   console.log(validArticles);
   return (
     <div>
-      Articles in topic {`${slug}`}
       <ul id="article-list">
         {validArticles.map((article) => (
-          <div className="single-article">
+          <button
+            onClick={() => navigate(`/articles/${article.article_id}`)}
+            className="single-article"
+          >
             <p key={article.article_id}>{article.title}</p>
             <img
               src={article.article_img_url}
               width={50}
               alt="A picture of the article"
             />
-            <button onClick={() => navigate(`/articles/${article.article_id}`)}>
-              More Info
-            </button>
-          </div>
+          </button>
         ))}
       </ul>
     </div>
