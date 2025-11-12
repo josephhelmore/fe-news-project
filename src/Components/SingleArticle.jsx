@@ -21,17 +21,18 @@ const SingleArticle = () => {
     return <p id="article-list">Fetching the data... </p>;
   }
   const handleVote = (voteChange) => {
-    const {article_id} = singleArticles
+    const { article_id } = singleArticles;
     setSingleArticles((currentArticle) => ({
       ...currentArticle,
       votes: currentArticle.votes + voteChange,
-      
-
     }));
     console.log("article_id before VoteHandler:", article_id, singleArticles);
     VoteHandler(article_id, voteChange).then((updatedArticle) => {
       if (updatedArticle) {
-        setSingleArticles(updatedArticle.article);
+        setSingleArticles((currentArticle) => ({
+          ...currentArticle,
+          votes: updatedArticle.article.votes,
+        }));
       }
     });
   };
@@ -46,10 +47,7 @@ const SingleArticle = () => {
         <section id="article-votes">
           <p>This article currently has {singleArticles.votes} votes</p> Did you
           like the article? let us know!
-          <button onClick={() => handleVote(1)}>
-            {" "}
-            I liked the article!{" "}
-          </button>
+          <button onClick={() => handleVote(1)}> I liked the article! </button>
           <button onClick={() => handleVote(-1)}>
             {" "}
             Not so much on this one...{" "}
