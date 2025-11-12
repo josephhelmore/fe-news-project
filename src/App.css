@@ -88,5 +88,18 @@ header {
 }
 
 #comments {
-  text-align: center;
+  text-align: left;
+
+}
+.comment-buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+.comment{
+    background-color: rgb(229, 229, 229);
+    border-radius: 5px;
+    padding-left:20px;
+    border: 5px;
+
 }

@@ -1,23 +1,22 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 
-export const  useArticleComments = (article_id) => {
-  const { article_id } = useParams();
+export const useArticleComments = (article_id) => {
   const [articleComments, setArticleComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://book-app-kc9i.onrender.com/api/articles/${article_id}/comments`)
+    fetch(
+      `https://book-app-kc9i.onrender.com/api/articles/${article_id}/comments`
+    )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data, "data on comments");
-        setArticleComments(data);
+        console.log(data.comments, "data on comments");
+        setArticleComments(data.comments);
         setIsLoading(false);
       });
   }, [article_id]);
-  
-return {articleComments, isLoading}
 
-}
+  return { articleComments, isLoading };
+};
 
-export default useArticleComments
+export default useArticleComments;
