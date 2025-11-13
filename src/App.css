@@ -1,13 +1,29 @@
-header {
-  background-color: rgb(195, 195, 195);
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  font-family: "Courier New", Courier, monospace;
+#header {
   display: flex;
-  justify-content: center;
+  align-items: center;      
+  justify-content: center;     
+  position: relative;          
+  padding: 10px 20px;
+  background-color: #c9c7c7;   
+  margin-left: 10%;
+  margin-right: 5%;
   margin-bottom: 10px;
   border-radius: 5px;
+}
+.title {
+  margin: 0;
+  font-size: 2rem;
+  text-align: center;
+  flex: 1;                     
+}
+
+.login-buttons {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 10px;                  
 }
 
 #topic-card {

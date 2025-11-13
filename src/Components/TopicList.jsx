@@ -3,12 +3,12 @@ import { Link } from "react-router";
 
 const TopicList = () => {
   const [topics, setTopics] = useState([]);
+  
 
   useEffect(() => {
     fetch("https://book-app-kc9i.onrender.com/api/topics")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.topics);
         setTopics(data.topics);
       });
   }, []);

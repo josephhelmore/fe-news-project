@@ -15,4 +15,8 @@ const VoteHandler = (article_id, vote) => {
     .then((data)=>{return data})
 }
 
+
+
+
+
 export default VoteHandler

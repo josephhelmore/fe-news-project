@@ -7,12 +7,14 @@ import TopicList from "./Components/TopicList";
 import Articles from "./Components/DisplayedArticles";
 import SingleArticle from "./Components/SingleArticle";
 import ArticleComments from "./Components/ArticleComments";
+import LoginButtons from "./Components/LoginButtons";
 
 function App() {
 return (
     <>
-      <header>
+      <header id="header">
         <Header />
+        <LoginButtons/>
       </header>
       <div id="main-body">
         <section id="topic-card">

@@ -10,7 +10,6 @@ export const useArticleComments = (article_id) => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.comments, "data on comments");
         setArticleComments(data.comments);
         setIsLoading(false);
       });

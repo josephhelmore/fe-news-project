@@ -34,7 +34,7 @@ const Articles = () => {
             <p key={article.article_id}>{article.title}</p>
             <img
               src={article.article_img_url}
-              width={50}
+              width={100}
               alt="A picture of the article"
             />
           </button>
