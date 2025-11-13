@@ -1,13 +1,6 @@
 import { useState } from "react";
 
-const LoginButtons = () => {
-  const [loggedInUser, setLoggedInUser] = useState(null);
-
-  const handleLogIn = (user) => {
-    setLoggedInUser(user);
-    console.log(`Logged in as ${user}`);
-  };
-
+const LoginButtons = ({ loggedInUser, handleLogIn }) => {
   return (
     <section className="login-buttons">
       Logged in as: {loggedInUser}

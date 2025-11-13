@@ -1,13 +1,13 @@
 import { useState } from "react";
 import AddComment from "./AddComment";
 
-const commentForm = ({ article_id }) => {
+const commentForm = ({ article_id, loggedInUser }) => {
   const [newComment, setNewComment] = useState("");
 
   const onSubmit = (event) => {
     event.preventDefault();
 
-    AddComment(article_id, newComment).then(() => setNewComment(""));
+    AddComment(article_id, newComment, loggedInUser).then(() => setNewComment(""));
   };
 
   return (

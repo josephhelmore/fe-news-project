@@ -2,14 +2,14 @@
 
 
 
-const AddComment = (article_id, newComment) => {
-  console.log(article_id, newComment, "article id");
+const AddComment = (article_id, newComment, loggedInUser) => {
+  console.log(article_id, newComment, loggedInUser, "article id");
   return fetch(
     `https://book-app-kc9i.onrender.com/api/articles/${article_id}/comments`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username: "weegembump", body: newComment }),
+      body: JSON.stringify({ username: loggedInUser, body: newComment }),
     }
   )
     .then((res) => {
