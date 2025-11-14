@@ -1,6 +1,6 @@
 import DeleteComments from "./DeleteComments";
 
-const CommentList = ({ singleArticles, articleComments }) => {
+const CommentList = ({ singleArticles, articleComments, loggedInUser}) => {
   return (
     <>
       <p>{singleArticles.comment_count} Comments</p>
@@ -11,7 +11,7 @@ const CommentList = ({ singleArticles, articleComments }) => {
               {comment.author} {" : "}
               {comment.body}{" "}
               <p className="comment-buttons">Votes: {comment.votes}</p>
-              <DeleteComments />
+              <DeleteComments loggedInUser={loggedInUser} singleArticles={singleArticles}/>
             </li>
           </>
         ))}

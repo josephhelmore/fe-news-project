@@ -59,6 +59,7 @@ const SingleArticle = ({ loggedInUser }) => {
         <CommentList
           singleArticles={singleArticles}
           articleComments={articleComments}
+          loggedInUser={loggedInUser}
         />
       </section>
       <CommentForm loggedInUser={loggedInUser} article_id={article_id} />

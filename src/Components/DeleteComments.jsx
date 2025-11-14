@@ -1,8 +1,14 @@
-const DeleteComments = () => {
-  // if loggedInAs === article.author
-  // have a delete button for the comments
-  //which can delete the comment
-  return <button> Delete comment</button>;
+
+const DeleteComments = ({ loggedInUser, singleArticles }) => {
+  console.log(loggedInUser, singleArticles, "loggedinuser");
+
+
+    if (loggedInUser === singleArticles.author)
+      return <button> Delete comment</button>;
+
+
+
+  
 };
 
 export default DeleteComments;

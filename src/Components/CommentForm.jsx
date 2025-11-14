@@ -14,7 +14,7 @@ const commentForm = ({ article_id, loggedInUser }) => {
     <form onSubmit={onSubmit}>
       <textarea
         value={newComment}
-        onChange={(e) => setNewComment(e.target.value)}
+        onChange={(event) => setNewComment(event.target.value)}
         placeholder="Write your comment..."
       />
       <button type="submit">Submit</button>
