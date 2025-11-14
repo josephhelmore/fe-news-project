@@ -3,7 +3,6 @@
 
 
 const AddComment = (article_id, newComment, loggedInUser) => {
-  console.log(article_id, newComment, loggedInUser, "article id");
   return fetch(
     `https://book-app-kc9i.onrender.com/api/articles/${article_id}/comments`,
     {
