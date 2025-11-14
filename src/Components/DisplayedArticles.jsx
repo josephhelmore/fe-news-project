@@ -22,7 +22,6 @@ const Articles = () => {
   }
 
   const validArticles = articles.filter((article) => article.topic === slug);
-  console.log(validArticles);
   return (
     <div>
       <ul id="article-list">
@@ -37,16 +36,14 @@ const Articles = () => {
               width={100}
               alt="A picture of the article"
             />
+            <p> votes: {article.votes}</p>
+            <p> comments: {article.comment_count}</p>
+            <p>Date: {article.created_at}</p>
           </button>
         ))}
       </ul>
     </div>
   );
-
-  //filter through the data.articles array
-  //if data.articles[i]=== slug
-  //display relevant articles.
-  //use params to get access to the slugID
 };
 
 export default Articles;

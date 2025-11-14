@@ -1,4 +1,3 @@
-
 const LoginButtons = ({ loggedInUser, handleLogIn }) => {
   return (
     <section className="login-buttons">

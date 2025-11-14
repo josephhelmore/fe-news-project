@@ -1,9 +1,4 @@
-import VoteHandler from "./VoteHandler";
-import { useState } from "react";
-
 const ArticleVotes = ({singleArticles, hasVoted, handleVote}) => {
-
-
   return (
     <section id="article-votes">
       <p>This article currently has {singleArticles.votes} votes</p> Did you

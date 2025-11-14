@@ -1,7 +1,3 @@
-
-
-
-
 const AddComment = (article_id, newComment, loggedInUser) => {
   return fetch(
     `https://book-app-kc9i.onrender.com/api/articles/${article_id}/comments`,
@@ -18,7 +14,6 @@ const AddComment = (article_id, newComment, loggedInUser) => {
       return res.json();
     })
     .then((data) => {
-      console.log(data);
       return data;
     })
     .catch((err) => {

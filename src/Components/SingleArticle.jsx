@@ -5,7 +5,6 @@ import VoteHandler from "./VoteHandler";
 import CommentForm from "./CommentForm";
 import CommentList from "./CommentsList";
 import ArticleVotes from "./ArticleVotes";
-import DeleteComments from "./DeleteComments";
 
 const SingleArticle = ({ loggedInUser }) => {
   const { article_id } = useParams();
