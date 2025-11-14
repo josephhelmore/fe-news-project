@@ -1,12 +1,9 @@
-import { useState } from "react";
-
 const DeleteComments = ({
   loggedInUser,
   setComments,
   articleComment,
   setDeleteMessage,
 }) => {
-  const [deleted, setDeleted] = useState(false);
 
   const handleDelete = () => {
     fetch(
@@ -15,20 +12,19 @@ const DeleteComments = ({
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       }
-    )
-      .then((res) => {
-        if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
-        setComments((currComments) =>
-          currComments.filter((c) => c.comment_id !== articleComment.comment_id)
-        );
+    ).then((res) => {
+      if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
+      setComments((currComments) =>
+        currComments.filter((c) => c.comment_id !== articleComment.comment_id)
+      );
 
-        setDeleteMessage("Comment deleted!");
-        setTimeout(() => setDeleteMessage(""), 2000);
-      })
+      setDeleteMessage("Comment deleted!");
+      setTimeout(() => setDeleteMessage(""), 2000);
+    })
 
-      .catch((err) => {
-        console.error("Error deleting comment:", err);
-      });
+   .catch((err) => {
+      console.error("Error deleting comment:", err);
+    });
   };
 
   const commentAuthor = articleComment.author || articleComment.username;
@@ -38,9 +34,6 @@ const DeleteComments = ({
   return (
     <>
       <button onClick={handleDelete}>Delete comment</button>
-      {deleted && (
-        <p style={{ marginLeft: "8px", color: "green" }}>Comment deleted</p>
-      )}
     </>
   );
 };

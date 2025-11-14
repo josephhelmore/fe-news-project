@@ -12,15 +12,15 @@ const CommentList = ({ singleArticles, articleComments, loggedInUser }) => {
         {comments.map((comment) => (
           <>
             <li className="comment" key={comment.comment_id}>
-              {comment.author} {" : "}
-              {comment.body}{" "}
+              {comment.author}
+              {comment.body}
               <p className="comment-buttons">Votes: {comment.votes}</p>
               <DeleteComments
                 loggedInUser={loggedInUser}
                 setComments={setComments}
                 articleComment={comment}
                 setDeleteMessage={setDeleteMessage}
-                />
+              />
             </li>
           </>
         ))}

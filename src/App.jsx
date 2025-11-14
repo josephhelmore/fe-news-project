@@ -5,7 +5,7 @@ import "./App.css";
 
 import Header from "./Components/Header";
 import TopicList from "./Components/TopicList";
-import Articles from "./Components/DisplayedArticles";
+import Articles from "./Components/ArticleList";
 import SingleArticle from "./Components/SingleArticle";
 import ArticleComments from "./Components/ArticleComments";
 import LoginButtons from "./Components/LoginButtons";
@@ -29,7 +29,6 @@ function App() {
         </section>
         <section>
           <Routes>
-            <Route path="/" element={<p>Select a topic to view articles.</p>} />
             <Route path="/topics/:slug" element={<Articles />} />
             <Route
               path="/articles/:article_id"

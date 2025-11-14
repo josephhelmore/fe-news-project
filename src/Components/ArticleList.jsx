@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import Sorting from "./Sorting";
 
 const Articles = () => {
   const { slug } = useParams();
@@ -24,6 +25,7 @@ const Articles = () => {
   const validArticles = articles.filter((article) => article.topic === slug);
   return (
     <div>
+      <Sorting/>
       <ul id="article-list">
         {validArticles.map((article) => (
           <button
@@ -38,7 +40,7 @@ const Articles = () => {
             />
             <p> votes: {article.votes}</p>
             <p> comments: {article.comment_count}</p>
-            <p>Date: {article.created_at}</p>
+            <p> Date: {article.created_at}</p>
           </button>
         ))}
       </ul>
