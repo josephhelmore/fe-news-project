@@ -125,3 +125,9 @@
   margin-left: 10px;
   width: 20vw;
 }
+.sorting-list fieldset {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}

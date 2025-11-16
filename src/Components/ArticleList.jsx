@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Sorting from "./Sorting";
+import { sortByComments, sortByDate, sortByVotes } from "./HandleSorting";
 
 const Articles = () => {
   const { slug } = useParams();
@@ -8,6 +9,8 @@ const Articles = () => {
 
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [sortBy, setSortBy] = useState("");
+  const [order, setOrder] = useState("");
 
   useEffect(() => {
     fetch("https://book-app-kc9i.onrender.com/api/articles")
@@ -23,26 +26,39 @@ const Articles = () => {
   }
 
   const validArticles = articles.filter((article) => article.topic === slug);
+
+  let sortedArticles = [...validArticles];
+
+  if (sortBy === "comments") {
+    sortedArticles = sortByComments(sortedArticles, order);
+  } else if (sortBy === "votes") {
+    sortedArticles = sortByVotes(sortedArticles, order);
+  } else if (sortBy === "date") {
+    sortedArticles = sortByDate(sortedArticles, order);
+  }
+
   return (
     <div>
-      <Sorting/>
+      <Sorting onSortChange={setSortBy} onOrderChange={setOrder} />
       <ul id="article-list">
-        {validArticles.map((article) => (
-          <button
-            onClick={() => navigate(`/articles/${article.article_id}`)}
-            className="single-article"
-          >
-            <p key={article.article_id}>{article.title}</p>
-            <img
-              src={article.article_img_url}
-              width={100}
-              alt="A picture of the article"
-            />
-            <p> votes: {article.votes}</p>
-            <p> comments: {article.comment_count}</p>
-            <p> Date: {article.created_at}</p>
-          </button>
-        ))}
+        {sortedArticles.map((article) => {
+          return (
+            <button
+              onClick={() => navigate(`/articles/${article.article_id}`)}
+              className="single-article"
+            >
+              <p key={article.article_id}>{article.title}</p>
+              <img
+                src={article.article_img_url}
+                width={100}
+                alt="A picture of the article"
+              />
+              <p> votes: {article.votes}</p>
+              <p> comments: {article.comment_count}</p>
+              <p> Date: {article.created_at}</p>
+            </button>
+          );
+        })}
       </ul>
     </div>
   );
