@@ -1,16 +1,28 @@
-# React + Vite
+# NC News Frontend 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This app represents a series of articles represented by topics, which can be voted and commented upon. To navigate, there are topics on the left hand side which you can use to load up articles of those specific topics. These articles can be sorted. 
 
-Currently, two official plugins are available:
+Please note this is still a work in progress - some features still need refining. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Where to view the live site? 
+This app can be found on Netlify; [Depolyed] (https://curious-meringue-981ef5.netlify.app/topics/coding)
 
-## React Compiler
+# Backend Repository
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Back-end [repo] (https://github.com/josephhelmore/nc_news_BE)
 
-## Expanding the ESLint configuration
+# Minimum requirements
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Minimum node version; 24.10.0
+you can check your version by using 'node --version' 
+
+# How to run locally
+
+- git clone https://github.com/josephhelmore/fe-news-project.git
+- Navigate to fe-news-project
+- npm i 
+- npm run dev
+
+
+
+This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/)
