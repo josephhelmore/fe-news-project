@@ -3,11 +3,21 @@ import AddComment from "./AddComment";
 
 const commentForm = ({ article_id, loggedInUser }) => {
   const [newComment, setNewComment] = useState("");
+  const [error, setError] = useState(null);
 
   const onSubmit = (event) => {
     event.preventDefault();
 
-    AddComment(article_id, newComment, loggedInUser).then(() => setNewComment(""));
+    if (!loggedInUser) {
+      setError("You must be logged in to post a comment.");
+      return;
+    }
+
+    setError("");
+
+    AddComment(article_id, newComment, loggedInUser).then(() =>
+      setNewComment("")
+    );
   };
 
   return (
@@ -18,9 +28,9 @@ const commentForm = ({ article_id, loggedInUser }) => {
         placeholder="Write your comment..."
       />
       <button type="submit">Submit</button>
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </form>
   );
-
 };
 
-export default commentForm
+export default commentForm;
