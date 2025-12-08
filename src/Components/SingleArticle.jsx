@@ -11,6 +11,7 @@ const SingleArticle = ({ loggedInUser }) => {
   const { articleComments, isLoading } = useArticleComments(article_id);
   const [singleArticles, setSingleArticles] = useState({});
   const [hasVoted, setHasVoted] = useState(false);
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     fetch(`https://book-app-kc9i.onrender.com/api/articles/${article_id}`)
@@ -19,6 +20,14 @@ const SingleArticle = ({ loggedInUser }) => {
         setSingleArticles(data.article);
       });
   }, [article_id]);
+
+  useEffect(() => {
+    setComments(articleComments);
+  }, [articleComments]);
+
+  const handleComment = (newComment) => {
+    setComments((current) => [...current, newComment]);
+  };
 
   const handleVote = (voteChange) => {
     const { article_id } = singleArticles;
@@ -57,13 +66,19 @@ const SingleArticle = ({ loggedInUser }) => {
       <section id="comments">
         <CommentList
           singleArticles={singleArticles}
-          articleComments={articleComments}
+          articleComments={comments}
           loggedInUser={loggedInUser}
+          setComments={setComments}
         />
       </section>
-      <CommentForm loggedInUser={loggedInUser} article_id={article_id} />
-  <p>Created on: {new Date(singleArticles.created_at).toLocaleDateString()}</p>
-
+      <CommentForm
+        loggedInUser={loggedInUser}
+        article_id={article_id}
+        onAddingComment={handleComment}
+      />
+      <p>
+        Created on: {new Date(singleArticles.created_at).toLocaleDateString()}
+      </p>
     </section>
   );
 };

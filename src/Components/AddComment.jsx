@@ -14,7 +14,7 @@ const AddComment = (article_id, newComment, loggedInUser) => {
       return res.json();
     })
     .then((data) => {
-      return data;
+      return data.comments;
     })
     .catch((err) => {
       console.log("error", err);

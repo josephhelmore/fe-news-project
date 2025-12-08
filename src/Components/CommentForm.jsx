@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AddComment from "./AddComment";
 
-const commentForm = ({ article_id, loggedInUser }) => {
+const commentForm = ({ article_id, loggedInUser, onAddingComment }) => {
   const [newComment, setNewComment] = useState("");
   const [error, setError] = useState(null);
 
@@ -15,9 +15,12 @@ const commentForm = ({ article_id, loggedInUser }) => {
 
     setError("");
 
-    AddComment(article_id, newComment, loggedInUser).then(() =>
-      setNewComment("")
-    );
+    AddComment(article_id, newComment, loggedInUser).then((createdComment) => {
+      setNewComment("");
+      if (createdComment && onAddingComment) {
+        onAddingComment(createdComment);
+      }
+    });
   };
 
   return (
