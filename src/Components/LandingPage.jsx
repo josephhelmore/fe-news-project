@@ -1,7 +1,7 @@
-import Sorting from "./Sorting";
+import Sorting from "./utils/Sorting";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { sortByComments, sortByDate, sortByVotes } from "./HandleSorting";
+import { sortByComments, sortByDate, sortByVotes } from "./utils/HandleSorting";
 
 const LandingPage = () => {
   const [articles, setArticles] = useState([]);

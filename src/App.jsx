@@ -4,11 +4,11 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
 import Header from "./Components/Header";
-import TopicList from "./Components/TopicList";
-import Articles from "./Components/ArticleList";
-import SingleArticle from "./Components/SingleArticle";
-import ArticleComments from "./Components/ArticleComments";
-import LoginButtons from "./Components/LoginButtons";
+import TopicList from "./Components/utils/TopicList";
+import Articles from "./Components/Articles/ArticleList";
+import SingleArticle from "./Components/Articles/SingleArticle";
+import ArticleComments from "./Components/Articles/ArticleComments";
+import LoginButtons from "./Components/utils/LoginButtons";
 import LandingPage from "./Components/LandingPage";
 
 function App() {

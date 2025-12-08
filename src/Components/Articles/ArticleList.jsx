@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Sorting from "./Sorting";
-import { sortByComments, sortByDate, sortByVotes } from "./HandleSorting";
+import Sorting from "../utils/Sorting";
+import {
+  sortByComments,
+  sortByDate,
+  sortByVotes,
+} from "../utils/HandleSorting";
 
 const Articles = () => {
   const { slug } = useParams();

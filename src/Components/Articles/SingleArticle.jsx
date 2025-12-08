@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useArticleComments from "./ArticleComments";
-import VoteHandler from "./VoteHandler";
-import CommentForm from "./CommentForm";
-import CommentList from "./CommentsList";
+import VoteHandler from "../utils/VoteHandler";
+import CommentForm from "../Comments/CommentForm";
+import CommentList from "../Comments/CommentsList";
 import ArticleVotes from "./ArticleVotes";
 
 const SingleArticle = ({ loggedInUser }) => {
