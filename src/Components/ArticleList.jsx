@@ -48,6 +48,7 @@ const Articles = () => {
               className="single-article"
             >
               <p key={article.article_id}>{article.title}</p>
+              <p> Author: {article.author}</p>
               <img
                 src={article.article_img_url}
                 width={100}
@@ -55,7 +56,9 @@ const Articles = () => {
               />
               <p> votes: {article.votes}</p>
               <p> comments: {article.comment_count}</p>
-              <p> Date: {article.created_at}</p>
+              <p>
+                Created on: {new Date(article.created_at).toLocaleDateString()}
+              </p>
             </button>
           );
         })}

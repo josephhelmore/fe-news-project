@@ -1,0 +1,4 @@
+1. Screen sizing display
+2. Put topics at the top
+3. Add a landing home page with all articles
+4. add auto refresh or auto add for comments and votes

@@ -9,6 +9,7 @@ import Articles from "./Components/ArticleList";
 import SingleArticle from "./Components/SingleArticle";
 import ArticleComments from "./Components/ArticleComments";
 import LoginButtons from "./Components/LoginButtons";
+import LandingPage from "./Components/LandingPage";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -29,7 +30,7 @@ function App() {
         </section>
         <section>
           <Routes>
-            <Route path="/" element={<Articles />} />
+            <Route path="/" element={<LandingPage />} />
             <Route path="/topics/:slug" element={<Articles />} />
             <Route
               path="/articles/:article_id"

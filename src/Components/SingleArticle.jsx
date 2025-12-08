@@ -62,7 +62,8 @@ const SingleArticle = ({ loggedInUser }) => {
         />
       </section>
       <CommentForm loggedInUser={loggedInUser} article_id={article_id} />
-      created at {singleArticles.created_at}
+  <p>Created on: {new Date(singleArticles.created_at).toLocaleDateString()}</p>
+
     </section>
   );
 };
