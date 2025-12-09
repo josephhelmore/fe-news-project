@@ -1,23 +1,28 @@
 Link :visited {
   text-decoration: none;
 }
-
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 #header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   width: 80%;
-  justify-content: center;
   position: relative;
-  padding: 20px 20px;
   background-color: #c9c7c7;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 10px;
+  margin: 20px auto;
   border-radius: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.centre-header {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#header > :last-child {
+  margin-left: auto;
 }
 .title {
   margin: 0;
@@ -25,7 +30,6 @@ body {
   text-align: center;
   flex: 1;
 }
-
 .login-buttons {
   position: absolute;
   right: 20px;
@@ -35,45 +39,42 @@ body {
   flex-direction: row;
   gap: 10px;
 }
-
 #topic-card {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   align-items: center;
   width: 80%;
   justify-content: center;
   position: relative;
   background-color: #0081bd;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 10px;
   border-radius: 5px;
-  padding: 20px;
+  margin: 20px auto;
+  margin-bottom: 0;
 }
-
 #topic-card a {
   text-decoration: none;
   color: inherit;
 }
-
 .topic-container {
   width: 80%;
 }
-
 .topic-list {
   padding: 0;
   margin: 0;
   text-transform: uppercase;
   text-decoration: none;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
+  flex-grow: 1;
   justify-content: space-between;
   align-items: center;
   list-style-type: none;
   text-align: center;
   width: 100%;
 }
-
-.topic-card {
+.topic-button {
   background-color: #79bcdc;
   text-align: center;
   padding-left: 50px;
@@ -85,15 +86,11 @@ body {
   height: 100%;
   align-items: stretch;
 }
-
-.topic-card:hover {
+.topic-button:hover {
   background-color: rgb(76, 76, 255);
   color: white;
 }
-
 #article-list {
-  margin-top: 0;
-
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
@@ -105,9 +102,10 @@ body {
   box-shadow: 5px 5px 5px grey;
   overflow-y: auto;
   scroll-behavior: smooth;
-  padding: 20px;
+  padding-top: 20px;
+  margin: 20px auto;
+  padding-left: 0;
 }
-
 #main-body {
   display: flex;
   align-items: center;
@@ -119,9 +117,7 @@ body {
   position: relative;
   margin-bottom: 10px;
   border-radius: 5px;
-  padding: 20px;
 }
-
 .single-article {
   display: flex;
   width: 200px;
@@ -131,11 +127,9 @@ body {
   margin: 10px;
   align-items: center;
 }
-
 .single-article:hover {
   background-color: beige;
 }
-
 #single-article-data {
   display: flex;
   flex-direction: column;
@@ -144,10 +138,7 @@ body {
   background-color: rgb(230, 163, 230);
 
   height: 75vh;
-  width: 60vw;
-  margin-top: 0;
-  margin-right: 10%;
-  margin-left: 10px;
+  margin: 20px auto;
   border-radius: 5px;
   box-shadow: 5px 5px 5px grey;
 
@@ -155,7 +146,6 @@ body {
   scroll-behavior: smooth;
   padding: 20px;
 }
-
 #comments {
   text-align: left;
 }
@@ -163,7 +153,6 @@ body {
   display: flex;
   flex-direction: row;
 }
-
 .comment {
   background-color: rgb(229, 229, 229);
   border-radius: 5px;
@@ -172,21 +161,18 @@ body {
   margin-bottom: 10px;
   padding-bottom: 10px;
 }
-
 .sorting-list fieldset {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 2rem;
 }
-
 .dropbtn {
   padding-top: 0;
   font-size: 16px;
   border: none;
   background-color: transparent;
 }
-
 .sorting-dropdown {
   position: relative;
   float: right;
@@ -194,27 +180,47 @@ body {
 
 .dropdown-content {
   display: none;
-  position:absolute;
+  position: absolute;
   background-color: #f1f1f1;
-  min-width: 250px;
+  min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }
-
-.dropdown-content a {
+.dropdown-content button {
+  text-align: left;
+  min-width: 200px;
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
+.dropdown-content button:hover {
 
-.dropdown-content a:hover {
   background-color: #ddd;
 }
-
 .sorting-dropdown:hover .dropdown-content {
   display: block;
 }
-
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
+}
+
+
+
+.login-button fieldset {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  
+}
+.login-dropdown {
+  z-index: 1000;
+  position: relative;
+  float: right;
+}
+
+.login-dropdown:hover .dropdown-content {
+ 
+  display: block;
 }

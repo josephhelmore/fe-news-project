@@ -11,7 +11,6 @@ import LoginButtons from "./Components/utils/LoginButtons";
 import LandingPage from "./Components/LandingPage";
 import Sorting from "./Components/utils/Sorting";
 
-
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
 
@@ -22,23 +21,24 @@ function App() {
   return (
     <>
       <header id="header">
-        <Header />
+        <div className="centre-header">
+          <Header />
+        </div>
         <LoginButtons loggedInUser={loggedInUser} handleLogIn={handleLogIn} />
       </header>
-        <section id="topic-card">
-          <TopicList />
-        </section>
+      <section id="topic-card">
+        <TopicList />
+      </section>
       <div id="main-body">
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/topics/:slug" element={<Articles />} />
-            <Route
-              path="/articles/:article_id"
-              element={<SingleArticle loggedInUser={loggedInUser} />}
-            />
-            <Route path="*" element={<p>404 Not Found</p>}></Route>
-          </Routes>
-        
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/topics/:slug" element={<Articles />} />
+          <Route
+            path="/articles/:article_id"
+            element={<SingleArticle loggedInUser={loggedInUser} />}
+          />
+          <Route path="*" element={<p>404 Not Found</p>}></Route>
+        </Routes>
       </div>
     </>
   );

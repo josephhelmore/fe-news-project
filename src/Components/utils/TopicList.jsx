@@ -15,18 +15,17 @@ const TopicList = () => {
 
   return (
     <div className="topic-container">
-      <ul className="topic-list">
-        <Link to="/" className="topic-card"> <strong>HOME</strong> </Link>
+      <div className="topic-list">
+        <Link to="/"> <p className="topic-button"><strong>HOME</strong></p> </Link>
         {topics.map((topic) => (
-          <Link to={`/topics/${topic.slug}`}>
-            <p key={topic.slug} className="topic-card"> <strong>{topic.slug}</strong></p> 
+          <Link to={`/topics/${topic.slug}`}  key={topic.slug}>
+            <p key={topic.slug} className="topic-button"> <strong>{topic.slug}</strong></p> 
           </Link>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
 
-//when each topic is clicked, display all the articles where the article.topic = topic
 
 export default TopicList;
