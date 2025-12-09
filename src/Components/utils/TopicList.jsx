@@ -14,13 +14,12 @@ const TopicList = () => {
   }, []);
 
   return (
-    <div className="topic-list">
-      Topic List
+    <div className="topic-container">
       <ul className="topic-list">
-        <Link to="/"> Home </Link>
+        <Link to="/" className="topic-card"> <strong>HOME</strong> </Link>
         {topics.map((topic) => (
           <Link to={`/topics/${topic.slug}`}>
-            <p key={topic.slug} className="topic-card">{topic.slug}</p> 
+            <p key={topic.slug} className="topic-card"> <strong>{topic.slug}</strong></p> 
           </Link>
         ))}
       </ul>

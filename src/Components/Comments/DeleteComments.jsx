@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const DeleteComments = ({
   loggedInUser,
   setComments,
@@ -5,7 +7,10 @@ const DeleteComments = ({
   setDeleteMessage,
 }) => {
 
+  const [isLoading, setIsLoading] = useState(false);
   const handleDelete = () => {
+    setIsLoading(true);
+
     fetch(
       `https://book-app-kc9i.onrender.com/api/comments/${articleComment.comment_id}`,
       {
@@ -24,6 +29,8 @@ const DeleteComments = ({
 
    .catch((err) => {
       console.error("Error deleting comment:", err);
+    }).finally(() => {
+      setIsLoading(false);
     });
   };
 
@@ -34,6 +41,7 @@ const DeleteComments = ({
   return (
     <>
       <button onClick={handleDelete}>Delete comment</button>
+      {isLoading && <p>Deleting comment...</p>}
     </>
   );
 };

@@ -43,7 +43,7 @@ const Articles = () => {
 
   return (
     <div>
-      <Sorting onSortChange={setSortBy} onOrderChange={setOrder} />
+        <Sorting onSortChange={setSortBy} onOrderChange={setOrder} />
       <ul id="article-list">
         {sortedArticles.map((article) => {
           return (
