@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import "./css/app.css"
+
+import "./css/App.css";
 
 import Header from "./Components/Header";
 import TopicList from "./Components/utils/TopicList";
