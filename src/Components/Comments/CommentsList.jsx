@@ -11,8 +11,8 @@ const CommentList = ({
 
   return (
     <>
-      <p>{singleArticles.comment_count} Comments</p>
-      <ul id="comment-list">
+      <p id="comment-count-header">{singleArticles.comment_count} Comments</p>
+      <section id="comment-list">
         {articleComments.map((comment) => (
           <section className="comment" key={comment.comment_id}>
             <strong>{comment.author}</strong>: {comment.body}
@@ -25,7 +25,7 @@ const CommentList = ({
             />
           </section>
         ))}
-      </ul>
+      </section>
       {deleteMessage && <p style={{ color: "green" }}>{deleteMessage}</p>}
     </>
   );

@@ -21,7 +21,7 @@ const LandingPage = () => {
   });
 
   if (isLoading) {
-    return <p id="article-list">Fetching the data... </p>;
+    return <p id="article-list">Fetching the data... If this is your first time visiting the site, it might take a minute to spin up!  </p>;
   }
 
   let sortedArticles = [...articles];

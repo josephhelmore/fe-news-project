@@ -71,14 +71,16 @@ const SingleArticle = ({ loggedInUser }) => {
           setComments={setComments}
         />
       </section>
-      <CommentForm
-        loggedInUser={loggedInUser}
-        article_id={article_id}
-        onAddingComment={handleComment}
-      />
-      <p>
-        Created on: {new Date(singleArticles.created_at).toLocaleDateString()}
-      </p>
+      <section id="comments-section">
+        <CommentForm
+          loggedInUser={loggedInUser}
+          article_id={article_id}
+          onAddingComment={handleComment}
+        />
+        <p>
+        </p>
+      </section>
+          Created on: {new Date(singleArticles.created_at).toLocaleDateString()}
     </section>
   );
 };

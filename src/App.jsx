@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import "./App.css";
+import "./css/app.css"
 
 import Header from "./Components/Header";
 import TopicList from "./Components/utils/TopicList";
@@ -9,7 +9,6 @@ import Articles from "./Components/Articles/ArticleList";
 import SingleArticle from "./Components/Articles/SingleArticle";
 import LoginButtons from "./Components/utils/LoginButtons";
 import LandingPage from "./Components/LandingPage";
-import Sorting from "./Components/utils/Sorting";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
