@@ -5,12 +5,25 @@
 
   gap: 2rem;
 }
-.dropbtn {
+
+  .dropbtn {
   padding-top: 0;
   font-size: 16px;
   border: none;
   background-color: transparent;
 }
+
+@media(max-width: 400px)
+{
+  .dropbtn {
+  padding-top: 0;
+  font-size: 16px;
+  border: none;
+  background-color: transparent;
+  font-size: 10px;
+}
+}
+
 .sorting-dropdown {
   position: relative;
   float: right;
