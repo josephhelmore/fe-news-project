@@ -1,0 +1,16 @@
+
+.login-button fieldset {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.login-dropdown {
+  z-index: 1000;
+  position: relative;
+  float: right;
+}
+
+.login-dropdown:hover .dropdown-content {
+  display: block;
+}

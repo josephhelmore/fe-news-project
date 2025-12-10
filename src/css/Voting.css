@@ -1,0 +1,14 @@
+#vote-button-section {
+  margin: 0 auto;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.vote-buttons {
+  height: 3rem;
+  background-color: #0081bd;
+  border-radius: 5px;
+  color: white;
+}
